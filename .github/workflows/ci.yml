@@ -1,0 +1,25 @@
+name: Prime Physio CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install workspaces
+        run: npm install
+      - name: Build web
+        run: npm run build:web
+      - name: Typecheck mobile
+        run: npm run typecheck --workspace @prime-physio/mobile
+      - name: Validate Expo configuration
+        run: npx expo config --json --project-dir apps/mobile
