@@ -1,0 +1,1 @@
+type Status='Confirmed'|'In progress'|'Completed'|'Cancelled'|'Pending';const names:Record<Status,string>={Confirmed:'success','In progress':'info',Completed:'neutral',Cancelled:'danger',Pending:'warning'};export function StatusBadge({status}:{status:Status}){return <span className={`status-badge status-badge--${names[status]}`}><span/>{status}</span>}
