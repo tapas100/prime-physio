@@ -1,0 +1,1 @@
+import type {ReactNode} from 'react';type Props={icon:ReactNode;title:string;description:string};export function EmptyState({icon,title,description}:Props){return <div className="empty-state"><div className="empty-state-icon">{icon}</div><h3>{title}</h3><p>{description}</p></div>}
