@@ -1,3 +1,11 @@
 # Web workspace
 
-The current web UI remains at the repository root during this first migration step. This workspace provides the web development/build entry point while keeping existing routes and styling intact. Next migration step: move root index.html and src into apps/web and update TypeScript paths.
+The existing React + TypeScript + Vite application now lives entirely in this workspace.
+
+Run from the repository root:
+```bash
+npm run dev:web
+npm run build:web
+```
+
+The web app consumes shared domain types and API contracts from packages/.
