@@ -1,0 +1,1 @@
+import {Platform} from 'react-native';export const platformTheme={fontFamily:Platform.select({ios:'System',android:'Roboto',default:'System'}),minimumTouchTarget:44,animation:{duration:180}} as const;
