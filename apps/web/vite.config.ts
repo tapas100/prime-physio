@@ -1,1 +1,1 @@
-import { defineConfig } from 'vite'; import react from '@vitejs/plugin-react'; import { resolve } from 'node:path'; export default defineConfig({ root: resolve(__dirname, '../..'), plugins: [react()] });
+import { defineConfig } from 'vite'; import react from '@vitejs/plugin-react'; import { fileURLToPath } from 'node:url'; import { dirname, resolve } from 'node:path'; const here=dirname(fileURLToPath(import.meta.url)); export default defineConfig({ root: resolve(here,'../..'), plugins:[react()] });
